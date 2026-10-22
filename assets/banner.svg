@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#0d1527"/>
+      <stop offset="100%" stop-color="#070a14"/>
+    </linearGradient>
+
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+
+    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <style>
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.35; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.08); }
+      }
+      @keyframes floatSlow1 {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(1deg); }
+      }
+      @keyframes floatSlow2 {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(10px) rotate(-1deg); }
+      }
+      @keyframes flowData {
+        0% { stroke-dashoffset: 240; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes nodePulse {
+        0%, 100% { r: 5px; fill: #38bdf8; opacity: 0.6; }
+        50% { r: 8px; fill: #00f2fe; opacity: 1; }
+      }
+      @keyframes shimmerText {
+        0% { stop-color: #38bdf8; }
+        50% { stop-color: #a78bfa; }
+        100% { stop-color: #38bdf8; }
+      }
+      .bg-pulse {
+        animation: pulseGlow 6s ease-in-out infinite;
+        transform-origin: 600px 180px;
+      }
+      .data-stream {
+        stroke-dasharray: 12, 12;
+        animation: flowData 4s linear infinite;
+      }
+      .data-stream-rev {
+        stroke-dasharray: 10, 10;
+        animation: flowData 5s linear infinite reverse;
+      }
+      .floating-node-1 { animation: floatSlow1 5s ease-in-out infinite; }
+      .floating-node-2 { animation: floatSlow2 6s ease-in-out infinite; }
+      .pulse-dot { animation: nodePulse 3s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="360" fill="url(#bgGrad)"/>
+
+  <!-- Ambient Animated Glowing Orbs (Deep Background Layer) -->
+  <g class="bg-pulse">
+    <circle cx="600" cy="180" r="220" fill="#3b82f6" opacity="0.12" filter="url(#glowFilter)"/>
+    <circle cx="220" cy="90" r="140" fill="#06b6d4" opacity="0.10" filter="url(#glowFilter)"/>
+    <circle cx="980" cy="270" r="160" fill="#8b5cf6" opacity="0.12" filter="url(#glowFilter)"/>
+  </g>
+
+  <!-- Technical Grid pattern (Low opacity background) -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="0.8">
+    <line x1="100" y1="0" x2="100" y2="360"/>
+    <line x1="250" y1="0" x2="250" y2="360"/>
+    <line x1="400" y1="0" x2="400" y2="360"/>
+    <line x1="550" y1="0" x2="550" y2="360"/>
+    <line x1="700" y1="0" x2="700" y2="360"/>
+    <line x1="850" y1="0" x2="850" y2="360"/>
+    <line x1="1000" y1="0" x2="1000" y2="360"/>
+    <line x1="1150" y1="0" x2="1150" y2="360"/>
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+  </g>
+
+  <!-- Dynamic Animated Data Pipelines (Midground Layer - behind foreground text) -->
+  <g opacity="0.35">
+    <path class="data-stream" d="M -50 180 Q 200 80, 450 180 T 950 160 T 1250 120" fill="none" stroke="#38bdf8" stroke-width="2.5"/>
+    <path class="data-stream-rev" d="M -50 240 Q 300 320, 600 240 T 1250 260" fill="none" stroke="#818cf8" stroke-width="2"/>
+    <path class="data-stream" d="M 100 -20 Q 250 200, 500 380" fill="none" stroke="#00f2fe" stroke-width="1.5"/>
+    <path class="data-stream-rev" d="M 1100 -20 Q 950 200, 700 380" fill="none" stroke="#c084fc" stroke-width="1.5"/>
+  </g>
+
+  <!-- Animated Storage Cluster Nodes (Floating left and right wings) -->
+  <g class="floating-node-1" transform="translate(60, 90)">
+    <rect width="130" height="70" rx="10" fill="url(#cardGrad1)" stroke="#38bdf8" stroke-width="1.2" opacity="0.85" filter="url(#softShadow)"/>
+    <circle cx="22" cy="24" r="5" class="pulse-dot"/>
+    <text x="36" y="28" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">S3 API / REST</text>
+    <rect x="22" y="42" width="86" height="4" rx="2" fill="#334155"/>
+    <rect x="22" y="42" width="58" height="4" rx="2" fill="#00f2fe"/>
+    <text x="22" y="58" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10">High Throughput</text>
+  </g>
+
+  <g class="floating-node-2" transform="translate(1010, 80)">
+    <rect width="130" height="70" rx="10" fill="url(#cardGrad1)" stroke="#818cf8" stroke-width="1.2" opacity="0.85" filter="url(#softShadow)"/>
+    <circle cx="22" cy="24" r="5" fill="#a855f7" class="pulse-dot"/>
+    <text x="36" y="28" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Erasure Coding</text>
+    <rect x="22" y="42" width="86" height="4" rx="2" fill="#334155"/>
+    <rect x="22" y="42" width="70" height="4" rx="2" fill="#818cf8"/>
+    <text x="22" y="58" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10">16+4 Redundancy</text>
+  </g>
+
+  <!-- FOREGROUND LAYER: Brand Shield, Main Titles & Badges (Guaranteed High Contrast & Readability) -->
+  <!-- Top Category Tag -->
+  <g transform="translate(600, 62)">
+    <rect x="-115" y="-14" width="230" height="28" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.2" opacity="0.95"/>
+    <circle cx="-85" cy="0" r="4" fill="#00f2fe"/>
+    <text x="10" y="5" text-anchor="middle" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">CLOUD &amp; DISTRIBUTED STORAGE</text>
+  </g>
+
+  <!-- Main Headline Title -->
+  <text x="600" y="142" text-anchor="middle" fill="url(#primaryGlow)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" font-size="50" font-weight="800" letter-spacing="-1" filter="url(#softShadow)">
+    Awesome Object Storage
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="185" text-anchor="middle" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" font-size="18" font-weight="400" letter-spacing="0.3">
+    Curated Index of S3-Compatible Cloud Platforms &amp; Self-Hosted Open-Source Engines
+  </text>
+
+  <!-- Feature Highlights (Pill Badges in Foreground) -->
+  <g transform="translate(600, 245)">
+    <!-- Pill 1: S3 Standard -->
+    <g transform="translate(-320, 0)">
+      <rect x="-65" y="-15" width="130" height="30" rx="15" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2"/>
+      <text x="0" y="5" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">⚡ S3 Compatible</text>
+    </g>
+    <!-- Pill 2: Distributed Core -->
+    <g transform="translate(-160, 0)">
+      <rect x="-68" y="-15" width="136" height="30" rx="15" fill="#0f172a" stroke="#60a5fa" stroke-width="1.2"/>
+      <text x="0" y="5" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">🌐 Distributed Core</text>
+    </g>
+    <!-- Pill 3: Zero Egress -->
+    <g transform="translate(0, 0)">
+      <rect x="-65" y="-15" width="130" height="30" rx="15" fill="#0f172a" stroke="#34d399" stroke-width="1.2"/>
+      <text x="0" y="5" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">💸 Zero Egress</text>
+    </g>
+    <!-- Pill 4: Self-Hosted -->
+    <g transform="translate(160, 0)">
+      <rect x="-68" y="-15" width="136" height="30" rx="15" fill="#0f172a" stroke="#a78bfa" stroke-width="1.2"/>
+      <text x="0" y="5" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">🛡️ Self-Hosted</text>
+    </g>
+    <!-- Pill 5: Petabyte Scale -->
+    <g transform="translate(320, 0)">
+      <rect x="-70" y="-15" width="140" height="30" rx="15" fill="#0f172a" stroke="#f472b6" stroke-width="1.2"/>
+      <text x="0" y="5" text-anchor="middle" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">🚀 Petabyte Scale</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Line -->
+  <line x1="350" y1="300" x2="850" y2="300" stroke="url(#primaryGlow)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+</svg>

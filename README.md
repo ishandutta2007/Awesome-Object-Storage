@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
   <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Object-Storage/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Object-Storage?style=flat-square&logo=github&color=gold" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Object-Storage/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Object-Storage?style=flat-square&logo=github&color=gold" alt="GitHub_Stars"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Object-Storage/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Object-Storage?style=flat-square&logo=github&color=blue" alt="GitHub Forks"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Object-Storage/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Object-Storage/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"/></a>
@@ -328,7 +328,7 @@ Contributions are warmly encouraged! Help keep this directory accurate, up to da
    ```bash
    git checkout -b add/new-storage-engine
    ```
-4. **Update `README.md`**: Follow the established format, ensuring exact pricing, licensing, star counts, and technical citations.
+4. **Update `README.md`**: Follow the established format, ensuring exact pricing, licensing, Stars_Counts, and technical citations.
 5. **Push and open a PR**: Submit a Pull Request with a clear summary of your changes.
 
 ---

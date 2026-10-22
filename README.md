@@ -1,6 +1,6 @@
 # Awesome-Object-Storage
 
-# Top Object Storage Tools Ecosystem
+## Top Object Storage Tools Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on S3 Compatibility, Erasure Coding & Self-Hosted Data Sovereignty*  
